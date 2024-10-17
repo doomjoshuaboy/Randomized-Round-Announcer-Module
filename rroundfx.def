@@ -1,0 +1,6 @@
+[Info]
+prefix = rr
+fx.scale = 4
+
+[Files]
+snd = rroundfx.snd

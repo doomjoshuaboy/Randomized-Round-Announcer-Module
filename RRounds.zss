@@ -1,0 +1,25 @@
+#IKEMEN GO Universal Random Round System By DoomJoshuaBoy 
+#Email - djb@doomjoshuaboy.com
+#BlueSky - doomjoshuaboy.com
+#FOR IKEMEN GO .99 OR LATER ONLY
+
+#This code allows you to randomised voices per round.
+#The prefix is "rr" however you can change from it how you want it to be in rroundfx.def
+#You can change how many sounds you want to add to the Random voice by changing the number after random%,
+#but you have to check rroundfx.snd for adding new sounds.
+#Make sure you set round.time and fight.time on fight definition to your likings sometimes rounds with animations can have extra time. 
+
+[Function PlayRandomRoundVoice()]
+playsnd { value: rr 100,floor(random%5); channel:0; pan:0;  abspan:0 }
+
+#Do not touch anything after this line
+[statedef -2]
+if roundstate = 0 && map(ik_rrounds) = 1 {
+mapSet{map: "ik_rrounds"; value: 0}
+}
+
+if roundstate = 2 && playerno = 1 && roundno>0 && map(ik_rrounds) = 0 {
+call PlayRandomRoundVoice();
+mapSet{map: "ik_rrounds"; value: 1}
+}
+
