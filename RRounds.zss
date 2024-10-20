@@ -21,15 +21,17 @@ playsnd { value: rr 101,floor(random%2); channel:0; pan:0;  abspan:0 }
 #Do not touch anything after this line
 [statedef -2]
 
-#The [Rounds] fight.time in the fight.def must match the time as it is here! You can change here too.  
+#The [Rounds] round.time and fight.time in the fight.def must match the time as it is here! You can change here too.  
 map(fight_time):=120;
+map(round_time):=0;
+
 
 if roundstate = 0 && map(ik_rrounds) = 1 && map(ik_rfights) = 1 {
 mapSet{map: "ik_rrounds"; value: 0}
 mapSet{map: "ik_rfights"; value: 0}
 }
 
-if roundstate = 2 && playerno = 1 && roundno>0 && map(ik_rrounds) = 0 {
+if time = map(round_time) && roundstate = 2 && playerno = 1 && roundno>0 && map(ik_rrounds) = 0 {
 call PlayRandomRoundVoice();
 mapSet{map: "ik_rrounds"; value: 1}
 }
