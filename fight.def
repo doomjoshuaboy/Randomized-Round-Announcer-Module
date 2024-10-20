@@ -1007,8 +1007,8 @@ round.sndtime = 60           ;Time to play the sounds
 ; FIGHT
 fight.time = 120              ;Time to show FIGHT component
 fight.offset = 160, 110     ;Component for FIGHT display
-fight.anim = 80             ;.
-fight.snd = 1,0             ;Sound to play
+fight.anim = 80             ;
+;fight.snd = 1,0             ;Sound to play
 fight.sndtime = 120           ;Time to play sound
 callfight.time = 0         ;Ikemen feature: Time to wait before starting fight
 ctrl.time = 150              ;Time players get control after starting fight
