@@ -21,7 +21,7 @@ It randomises Round Voice each round.
 
 2. Add the sounds into  `rroundfx.snd` in fighter factory.
 
-3. In `fight.def' Adjust a few timings and add the `rroundfx.def` as fx
+3. In `fight.def` Adjust a few timings and add the `rroundfx.def` as fx
 
 ```
 [Files]
