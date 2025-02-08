@@ -1,6 +1,6 @@
-# Universal Random Round System Module
+# Randomized Round Announcer Module
 
-It randomises Round Voice each round.
+It Randomizes Round Voice each round.
 
 ## How to use it?
 
