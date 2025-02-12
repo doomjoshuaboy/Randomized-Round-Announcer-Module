@@ -29,7 +29,7 @@ Comment them all sounds there
 
 Change how you want with those timers only. 
 round.time = XX 
-fight.time = XX (Always set the timer the same as the one in ZSS.)
+fight.time = XX
 callfight.time = XX
 ctrl.time = XX
 ```
