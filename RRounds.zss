@@ -10,34 +10,27 @@
 #The prefix is "rr" however you can change from it how you want it to be in rroundfx.def
 #You can change how many sounds you want to add to the Random voice by changing the number after random%,
 #but you have to check rroundfx.snd for adding new sounds.
-#Make sure you set round.time and fight.time on fight definition to your likings sometimes rounds with animations can have extra time. 
 
 [Function PlayRandomRoundVoice()]
-playsnd { value: rr 100,floor(random%5); channel:1; pan:0;  abspan:0 }
+playsnd { value: rr 100,floor(random%5); channel:0; pan:0;  abspan:0 }
 
 [Function PlayRandomFightVoice()]
-playsnd { value: rr 101,floor(random%2); channel:2; pan:0;  abspan:0 }
+playsnd { value: rr 101,floor(random%2); channel:0; pan:0;  abspan:0 }
 
 #Do not touch anything after this line
-[statedef -4]
+[statedef -2]
 
-#The [Rounds] round.time and fight.time in the fight.def must match the time as it is here! You can change here too.  
-map(fight_time):=240;
-map(round_time):=1;
-
-
-if roundstate = 0 && map(ik_rrounds) = 1 && map(ik_rfights) = 1 {
-mapSet{map: "ik_rrounds"; value: 0}
-mapSet{map: "ik_rfights"; value: 0}
+if roundstate = 0 {
+mapSet{map: "ik_rround"; value: 0}
+mapSet{map: "ik_rfight"; value: 0}
 }
 
-if roundtime = map(round_time) && IntroState = 3 && playerno = 1 && roundno>0 && map(ik_rrounds) = 0 {
+if introState = 3 && playerno = 1 && roundno>0 && map(ik_rround) = 0 {
     call PlayRandomRoundVoice();
-    mapSet{map: "ik_rrounds"; value: 1}
+    mapSet{map: "ik_rround"; value: 1}
 }
 
-if fighttime = map(fight_time) && IntroState = 4 && playerno = 1 && roundno>0 && map(ik_rfights) = 0 {
+if introState = 4 && playerno = 1 && roundno>0 && map(ik_rfight) = 0 {
     call PlayRandomFightVoice();
-    mapSet{map: "ik_rfights"; value: 1}
+    mapSet{map: "ik_rfight"; value: 1}
 }
-
