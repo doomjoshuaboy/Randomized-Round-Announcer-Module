@@ -4,19 +4,11 @@ It Randomizes Round Voice each round.
 
 ## How to use it?
 
-1. Go to your `config.json` to add this:
+1. Go to your `config.ini` to add this:
 
 ```
-  "CommonStates": [
-    "data/RRounds.zss",
-    "data/functions.zss",
-    "data/action.zss",
-    "data/dizzy.zss",
-    "data/guardbreak.zss",
-    "data/score.zss",
-    "data/tag.zss",
-    "data/training.zss"
-  ],
+[Common]
+States0 = data/Randomized-Round-Announcer-Module-main\RRounds.zss
 ```
 
 2. Add the sounds into  `rroundfx.snd` in fighter factory.
