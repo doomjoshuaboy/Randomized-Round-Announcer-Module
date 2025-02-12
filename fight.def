@@ -1,6 +1,4 @@
-; Note: Go to [Rounds] to make any changes. 
-
-; Definition of fight screen
+﻿; Definition of fight screen
 
 ; *** DO NOT MODIFY OR OVERWRITE THIS FILE ***
 ; To customize, make a copy of this file in a subdirectory of your
@@ -38,7 +36,7 @@ fightfx.sff = fightfx.sff ;legacy Mugen hitsparks
 fightfx.air = fightfx.air ;legacy Mugen hitsparks
 common.snd = common.snd
 fx1 = gofx.def            ;new Ikemen fx
-fx2 = rroundfx.def            ;for Universal Random Round System By DoomJoshuaBoy 
+fx2 = rroundfx.def
 ;-----------------------------------------------------------
 [FightFx]
 scale = 1
@@ -934,7 +932,8 @@ format.decimal.separator = .
 ; Ikemen feature
 [Action]
 team1.pos = 10,95         ;Coords to show
-team1.spacing = 0,3       ;Spacing
+team1.max = 8             ;Maximum simultaneous messages
+team1.spacing = 0,12      ;Spacing between messages
 team1.start.x = -40       ;Starting x-coords
 team1.bg.layerno = 2
 team1.bg.offset = 25,0
@@ -945,16 +944,17 @@ team1.front.layerno = 2
 team1.front.offset = 25,0
 team1.front.scale = 0.5,0.5
 team1.text.layerno = 2
-team1.text.font = 1,0,1
-team1.text.offset = 3,0   ;Offset of text
+team1.text.font = 3,0,1
+team1.text.offset = 3,-2   ;Offset of text
 team1.text.scale = 1,1
 team1.displaytime = 60    ;Time to show message
 team1.showspeed = 2       ;Message showing up speed (1 = instant)
 team1.hidespeed = 8       ;Message hiding speed (the larger value, the faster speed)
 
-team2.pos = 309,95        ;Coords to show
-team2.spacing = 0,3       ;Spacing
-team2.start.x = 359       ;Starting x-coords
+team2.pos = 309,95
+team2.max = 8
+team2.spacing = 0,12
+team2.start.x = 359
 team2.bg.layerno = 2
 team2.bg.offset = -25,0
 team2.bg.anim = 400
@@ -964,12 +964,12 @@ team2.front.layerno = 2
 team2.front.offset = -25,0
 team2.front.scale = 0.5,0.5
 team2.text.layerno = 2
-team2.text.font = 1,0,-1
-team2.text.offset = 3,0   ;Offset of text
+team2.text.font = 3,0,-1
+team2.text.offset = 3,-2
 team2.text.scale = 1,1
-team2.displaytime = 60    ;Time to show message
-team2.showspeed = 2       ;Message showing up speed (1 = instant)
-team2.hidespeed = 8       ;Message hiding speed (the larger value, the faster speed)
+team2.displaytime = 60
+team2.showspeed = 2
+team2.hidespeed = 8
 
 [Begin Action 400]
 400,0, 0,0, -1, ,AS80D128
@@ -984,7 +984,7 @@ start.waittime = 30         ;Time to wait before starting intro
 pos = 0,0
 
 ; ROUND X
-round.time = 0              ;Time to show round display
+round.time = 1              ;Time to show round display
 round.default.offset = 160, 100
 ; Default component to show for each round. Text can include a %i to
 ; the round number. Use "round.default.anim" for animation instead of
@@ -992,26 +992,25 @@ round.default.offset = 160, 100
 round.default.font = 1,0, 0
 round.default.text = Round %i
 round.default.displaytime = 120
-
-;Comment them all sounds here 
 ; Sounds to play for each round (optional, specify up to round 9)
-;round1.snd = 0,1
-;round2.snd = 0,2
-;round3.snd = 0,3
-round.sndtime = 60           ;Time to play the sounds
+round1.snd = 0,0
+round2.snd = 0,0
+round3.snd = 0,0
+round.sndtime = 1           ;Time to play the sounds
 ; Components to show for each round (optional, specify up to round 9)
 ; Uncomment to use
 ;round1.offset = 160, 100
 ;round1.anim = 
 
 ; FIGHT
-fight.time = 120              ;Time to show FIGHT component
+fight.time = 0              ;Time to show FIGHT component
 fight.offset = 160, 110     ;Component for FIGHT display
-fight.anim = 80             ;
-;fight.snd = 1,0             ;Sound to play
-fight.sndtime = 120           ;Time to play sound
-callfight.time = 0         ;Ikemen feature: Time to wait before starting fight
-ctrl.time = 150              ;Time players get control after starting fight
+fight.anim = 80             ;.
+fight.snd = 0,0             ;Sound to play
+fight.sndtime = 0           ;Time to play sound
+
+callfight.time = 120         ;Ikemen feature: Time to wait before starting fight
+ctrl.time = 120              ;Time players get control after starting fight
 
 ; KO
 KO.time    = 0              ;Time to show KO component
