@@ -8,7 +8,7 @@ It Randomizes Round Voice each round.
 
 ```
 [Common]
-States0 = data/Randomized-Round-Announcer-Module-main\RRounds.zss
+States0 = data/Randomized-Round-Announcer-Module\RRounds.zss
 ```
 
 2. Add the sounds into  `rroundfx.snd` in fighter factory.
